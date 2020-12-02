@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YuJiHee's Mini App</title>
+
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/master.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+</head>
+<body>
+    <main id="app">
+        <h1 class="hidden">MINI APP</h1>
+    <!-- container wrapper -->
+    <div class="container-wrapper">
+        <!-- Header -->
+        <header id="header">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo-white.svg" alt="logo" width="140px" height="40px"></a>
+            </div>
+
+            <!-- Main nav -->
+            <nav class="main-nav">
+                <h2 class="hidden">main-navigation</h2>
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">MODELS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">TOOLS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">DISCOVER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">OWNER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">SHOP</a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- End Main nav -->
+        </header>
+        <!-- End Header -->
+        
+        <section class="hero">
+            <h2 class="hidden">FEEL THE WINE IN YOUR FANGS.</h2>
+                <p>FEEL THE WINE</p>
+                <p class="text-big">IN YOUR</p>
+                <p class="text-big">FANGS.</p>
+        
+        </section>
+
+        <section class="cars">
+            <div class="title-box">
+                <h2>THE MINI 3 DOOR LINEUP.</h2>
+            </div>  
+            <div class="cars-box">
+                <ul class="cars-list">
+                    <car-card v-for="car in cars" :car="car" :key="car.id"></car-card>
+                </ul>
+            </div>
+            <div class="cars-info">
+                
+            </div>
+        </section>
+    
+        <!--footer-->
+        <footer id="footer">
+            <h2 class="hidden">footer</h2>
+            <div class="copyright">
+                <h3>COPYRIHGT &copy; 2020 MINI CANADA.</h3>
+            </div>
+            <nav class="footer-nav">
+                <h2 class="hidden">footer-navigation</h2>
+                <ul class="footer-nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">CONTACT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">PRIVACY POLICY</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">TERM OF USE</a>
+                    </li>
+            </nav>
+        </footer>
+        <!--End footer-->
+        
+    </div>
+    <!-- End container wrapper -->
+    </main>
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>

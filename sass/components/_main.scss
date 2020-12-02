@@ -1,0 +1,135 @@
+.hidden {display: none;}
+
+body {
+    color: white;
+    font-family:'Roboto', sans-serif;
+}
+
+.container-wrapper {
+    margin: auto 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#header, #footer {
+    height: 100px;
+    background-color: #0b0a0e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright {
+    margin-left: 50px;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-right: 20px;
+
+    a{
+        text-decoration: none;
+        color:white;
+    }
+
+    a:hover {
+        text-decoration-line: underline;
+    }
+     
+}
+
+.nav-item:last-child {
+    margin-right: 50px;
+}
+
+.hero {
+    text-align: right;
+    height: 100vh;
+    background: url(../images/cooper-wallpapers.jpg) no-repeat center;
+
+    p {
+        font-size: 40px;
+        font-weight: 300;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        margin-top: 400px;
+        margin-right: 100px;
+    }
+
+    .text-big {
+        font-size: 120px;
+        font-weight: 700;
+        margin:0 100px 0 0;
+    }
+}
+
+.title-box {
+    height: 200px;
+    background-color: #0b0a0e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2 {
+        text-align:center;
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+}
+
+
+
+.cars {
+    // height: 1080px;
+    // background-color: aqua;
+    display: flex;
+    flex-direction: column;
+}
+
+.cars-box {
+
+    // background-color: rgb(201, 201, 201);
+    align-self: center;
+}
+
+.cars-list {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    li {
+        display: inline-block;
+        img:hover {
+            filter: drop-shadow(8px 8px 10px grey);
+        }
+    }
+}
+
+.cars-info {
+    display: none;
+    flex-direction: column;
+    color: #0b0a0e;
+    border:solid 1px #0b0a0e;
+
+    li {
+        font-size: 20px;
+       
+        padding:20px;
+ 
+        span {
+            display: inline-block;
+            margin-top:10px;
+            font-style: italic;
+        }
+    }
+
+    li:nth-child(odd) {
+        background: #eeeeee;
+    }
+
+}
+.cars-info.on {
+    display: flex;
+    justify-content: center;
+}
