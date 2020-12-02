@@ -5,35 +5,48 @@ export default {
     // data needs to be a function inside a component
     data: function() {
         return {
-            carName: this.car.Name,
+    
+            carsInfo: "cars-info",
+            toggle: {
+                on: false,
+            },
+
+            err: this.car.err,
+            message: this.car.message,
         }
     },
 
     template: 
-        `<li @click="logClicked"> 
-            <img :src="'images/' + car.Img" :alt='car.name + " image"'>
+        `<li @click="logClicked">
+            <span v-if="car.err" style="background-color:red">{{car.message}}</span>
+            <template v-else>
+                <img :src="'images/' + car.IMG" :alt='car.NAME + " image"'>
+                <ul :class="[carsInfo, toggle]">
+                    <li> 
+                        <span>{{car.NAME}}</span>
+                    </li>
+                    <li> 
+                        <span>{{car.PRICE}}</span>
+                    </li>
+                    <li> 
+                        <span>{{car.ENGINE_ARCHITECTURE}}</span>
+                    </li>
+                    <li> 
+                        <span>{{car.OUTPUT}}</span>
+                    </li>
+                </ul>            
+            </template> 
         </li>
         `,
 
     created: function() {
-        console.log(`created ${this.car.Name}'s card`);
+        console.log(`created ${this.car.NAME}'s card`);
     },
 
     methods: {
         logClicked() {
-            console.log(`fired from inside ${this.car.Name}'s the component!`);
-        },
-
-        showCar(target) {
-            // remove this prof from professors array
-            console.log('click to view cars data', target, target.Name);
-            // the "this" keyword inside a vue instance REFERS to the vue instance itself by default
-
-            // toggle the property between true an false using a ternary statement
-            this.showCarData = this.showCarData ? false : true;
-
-            // make the selected profs data visible
-            this.currentCarsData = target;
+            console.log(`fired from inside ${this.car.ENGINE_ARCHITECTURE}'s the component!`);
+            this.toggle.on = !this.toggle.on;
         }
     }
 }

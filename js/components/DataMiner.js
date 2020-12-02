@@ -13,7 +13,6 @@ async function fetchData(sourceURL) {
         if (response.status !== 200) {
             throw new Error(`Danger Will Robinson! Error ${response.status}: ${errorCodes[response.status]}`);
         } 
-        
         return response;           
     });
 
@@ -21,7 +20,7 @@ async function fetchData(sourceURL) {
 
     // we'll assume success and pass through a parsed JavaScript object from the JSON data we get
     let dataset = await resource.json();
-
+    console.log(dataset);
     return dataset[0];
     
     debugger;

@@ -6,11 +6,7 @@ import CarsCard from "./components/CarsCard.js";
     let  vue_vm = new Vue({
     
         data: {
-            message: "Hello from vue!",
-            anotherMessage: "jihee",
-            removeAformat: true,
-            showCarData: true,
-
+    
             cars : [],
             currentCarsData: {}
         },
@@ -19,8 +15,14 @@ import CarsCard from "./components/CarsCard.js";
         mounted: function() {
             console.log("Vue is mounted, trying to fetch call");
 
-            fetchData("./includes/index.php").then(data => this.cars = data).catch(err => console.log(err));
+            fetchData("./includes/index.php").then(data => this.cars = data).catch(err => {
+                this.cars = [{
+                    err: true,
+                    message: err.message
+                }];
+            });
         },
+        
 
         // run a method when we change our view (update DOM with vue)
         updated: function() {
@@ -31,11 +33,6 @@ import CarsCard from "./components/CarsCard.js";
             logClicked() {
                 console.log("clicked on a car");
             },
-
-            clickHeader() {
-                console.log("header")
-            },
-
         },
 
         components: {

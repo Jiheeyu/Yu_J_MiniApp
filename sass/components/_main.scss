@@ -82,30 +82,54 @@ body {
 
 .cars {
     // height: 1080px;
-    background-color: aqua;
+    // background-color: aqua;
     display: flex;
     flex-direction: column;
 }
 
 .cars-box {
 
-    background-color: yellow;
+    // background-color: rgb(201, 201, 201);
     align-self: center;
 }
 
 .cars-list {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     li {
         display: inline-block;
+        img:hover {
+            filter: drop-shadow(8px 8px 10px grey);
+        }
     }
 }
 
 .cars-info {
-    width: 1000px;
-    height: 500px;
-    background-color: yellowgreen;
-    align-self: center;
-}
+    display: none;
+    flex-direction: column;
+    color: #0b0a0e;
+    border:solid 1px #0b0a0e;
 
+    li {
+        font-size: 20px;
+       
+        padding:20px;
+ 
+        span {
+            display: inline-block;
+            margin-top:10px;
+            font-style: italic;
+        }
+    }
+
+    li:nth-child(odd) {
+        background: #eeeeee;
+    }
+
+}
+.cars-info.on {
+    display: flex;
+    justify-content: center;
+}

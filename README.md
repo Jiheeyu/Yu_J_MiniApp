@@ -1,4 +1,4 @@
-![title](images/jihees.png "Mini App")
+![title](images/minicooper-banner.png "Mini App")
 
 ># Jiheui Yu's Mini App
 
